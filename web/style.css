@@ -1,0 +1,79 @@
+body {
+  font-family: Garamond;
+  border: 10px;
+  /*background-image: url("background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;*/
+  background-color: #ffff80;
+}
+
+h1{
+	font-size: 50px;
+	text-align: center;
+	font-variant:small-caps;
+	color:#000000;
+}
+
+.grid-container {
+  display: grid;
+  padding: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px 10px;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . .";
+}
+
+.button{
+    background: transparent;
+    border: none;
+    margin: 30px auto 0;
+    display: block;
+    font-size: 20px;
+    outline: none;
+
+    position relative
+    transition 0.3s
+    padding 10px // the trick
+}       
+
+.button:hover {
+        width: 100%;
+        padding: 0;
+}
+.button:active {
+        background: black;
+        color: white;
+        transition: none;
+}
+.hide {
+  display: none;
+}
+
+.myDIV:hover .hide {
+  display: block;
+  color: red;
+}
+
+.details { 
+    display: none;
+}
+
+#posts{
+	background-color: #ffcccb;
+}
+
+li:hover .details {
+    display: inline-block;
+    background-color: #f0e68c;
+}
+
+@media (max-device-width: 736px) {
+  .grid-container { 
+  	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>Web App</title>
+</head>
+
+  <body>
+    <h1 class="text-center">User Posts</h1>
+    <!-- grid container to display the retrieved information -->
+    <div class="grid-container" id="app">
+      <!-- looping over the user array -->
+      <div class="card-divider" v-for="(user, index) in users">
+        <!-- displays the title of the posts -->
+        <button class="button" onclick="myFunction()">{{ users[index].name }}</button>
+        <div id="posts">
+          <ul>
+            <!-- shows the posts of that particular user -->
+            <li v-for="post in posts" v-show ="post.userId == (index + 1)">{{ post.title }}
+              <!-- body of the post is displayed -->
+              <span class="details" v-show ="post.userId == (index + 1)"> BODY : {{ post.body }} </span>
+            </li>               
+          </ul>
+        </div>
+      </div>
+
+      <!--//add extra infroamtion about the user like the contact details 
+      <h1 class="text-center">Contact Details</h1>
+      <div v-for="(user, i) in users">
+          <h3> {{users[i].name}} </h3>
+          <h6> {{user.email}} </h6>
+          <h6> {{user.phone}} </h6>
+          <h6> {{user.website}} </h6>  
+      </div> -->
+
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="vue.js"></script>
+  </body>
+</html>
+
